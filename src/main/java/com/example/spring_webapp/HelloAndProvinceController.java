@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/v2")
 public class HelloAndProvinceController {
     @GetMapping(path = "/ciao/{provincia}")
-    public String ciao(
+    public User user(
             @PathVariable String provincia,
             @RequestParam String nome) {
-        return "Ciao " + nome + ", com'è il tempo in " + provincia + "?";
+        return new User(nome, provincia);
     }
 }
